@@ -21,6 +21,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           script: |
-            pip3 install -r requirements.txt
             git pull origin main
+            cd cryptoTradingBot
+            pip3 install -r requirements.txt
             nohup python3 bitcoinAutoTrade.py > output.log &
