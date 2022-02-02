@@ -23,4 +23,5 @@ jobs:
           script: |
             cd cryptoTradingBot
             git pull origin main
+            pip3 install -r requirements.txt
             nohup python3 bitcoinAutoTrade.py > output.log &
