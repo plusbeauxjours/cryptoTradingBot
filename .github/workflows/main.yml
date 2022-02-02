@@ -14,14 +14,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Run scripts in server
+      - name: Run scripts in servera
         uses: appleboy/ssh-action@master
         with:
           key: ${{ secrets.SSH_KEY }}
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          script: |
-            cd server
-            git reset --hard
-            git fetch
-            git pull
+          run: |
+            pip3 install -r requirements.txt
+            git pull origin main
+            nohup python3 bitcoinAutoTrade.py > output.log &
