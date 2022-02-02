@@ -59,7 +59,7 @@ predict_price("KRW-BTC")
 schedule.every().hour.do(lambda: predict_price("KRW-BTC"))
 
 # 로그인
-upbit = pyupbit.Upbit(access, secret)
+upbit = pyupbit.Upbit(AccessKey, SecretKey)
 print("autotrade start")
 
 # 자동매매 시작
