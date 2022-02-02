@@ -23,4 +23,3 @@ jobs:
           script: |
             cd cryptoTradingBot
             git pull origin main
-            nohup python3 bitcoinAutoTrade.py > output.log &
